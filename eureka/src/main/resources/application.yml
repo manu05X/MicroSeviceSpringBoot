@@ -1,0 +1,10 @@
+server:
+  port: 8761
+
+
+#I don't want this application to become client become a client to another Eureka server so, i will
+# make it standalone Eureka Server
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
