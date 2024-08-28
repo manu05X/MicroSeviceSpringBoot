@@ -58,4 +58,20 @@ proper restaurant ID for which the menu has to be fetched.
 3> to save restaurants in the database that will be used internally for us to add restaurants
 to the database.
 
+
+______________________________________________________
+POST endpoint
+
+So I've created a post mapping here with "/addRestaurant" path to save restaurant.
+Method will have a request body that means in the post mapping while hitting in the body (@RequestBody RestaurantDTO restaurantDTO).
+I'm going to give a Json for the restaurant DTO, which will internally be converted in the service layer to restaurant entity
+(mapRestaurantDTOToRestaurant) and will be saved to database.
+
+So "addRestaurantInDB" will be our method in service layer that we are going to create.
+addRestaurantInDB in service layer will internally add  restaurant entity to database,
+ And then it will again convert restaurant entity to RestaurantDTO (mapRestaurantToRestaurantDTO) and return it to controller
+
+successfully saved and hence Http status is 201 created because we have created a new entity restaurant
+
+in the database.
 */

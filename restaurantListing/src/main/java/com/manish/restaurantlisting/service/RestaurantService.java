@@ -103,4 +103,47 @@ SO using this hibernate dialect, which is a interface that converts your ORM lan
 This is important whenever you have a framework at one side and a data source like MySQL or Oracle on
 another side, if you have used Oracle, this dialect would have changed because the querying pattern
 for MySQL is different from the Oracle.
+
+
+
+_________________________
+
+addRestaurantInDB
+
+But what I can save is entity i.e Restaurant entity in DB. What I cannot save is RestaurantDTO.
+So first I need to convert this RestaurantDTO to Restaurant entity.
+
+How would I do that?
+ANS -> RestaurantMapper.INSTANCE.mapRestaurantDTOToRestaurant(restaurantDTO)
+Request mapper dot instance dot mapRestaurantDTOToRestaurant and restaurantDTO is something we are already
+getting from controller i.e front end(client).
+
+
+Now we are using -> restaurantRepo.save()
+ Restaurant savedRestaurant =  restaurantRepo.save(RestaurantMapper.INSTANCE.mapRestaurantDTOToRestaurant(restaurantDTO));
+
+When we run the save method [save()], the return type is what we are saving i.e actual restaurant entity,
+so the return type will be restaurant entity saved -> [savedRestaurant]-> restaurant entity is the instance
+which is returned when we save it in the repository.
+
+
+Now we need to return what we have saved to database. So again, while returning we need to return the DTO and not the entity.
+So we again we need to convert the savedRestaurant i.e restaurant entity to restaurantDTO using mapper mapRestaurantToRestaurantDTO
+and returned it on the controller layer.
+
+
+
+So we are getting DTO but we are saving the entity in our DB by converting it and the client could not know the
+structure or internal design of our entity and schema.
+
+So this is why it's very important to use DTOs to have the interaction with the clients and save the entities in the DB
+using mapper class or we could write our own mapper.
+
+
+
+____________________
+fetchRestaurantById method:
+  Optional<Restaurant> restaurant =  restaurantRepo.findById(id);
+The return type for this is an optional of restaurant because since there might be a chance that we might not
+find that restaurant by ID, hence we always have the option of restaurant in the return type.
 */
