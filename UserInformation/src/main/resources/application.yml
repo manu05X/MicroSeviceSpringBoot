@@ -12,6 +12,7 @@ spring:
     name: USER-SERVICE
   datasource:
     url: jdbc:mysql://localhost:3306/userdb
+#    The password of DB
     password: new_password
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
