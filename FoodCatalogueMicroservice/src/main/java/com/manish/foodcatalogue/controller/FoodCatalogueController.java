@@ -1,5 +1,6 @@
 package com.manish.foodcatalogue.controller;
 
+import com.manish.foodcatalogue.dto.FoodCataloguePage;
 import com.manish.foodcatalogue.dto.FoodItemDTO;
 import com.manish.foodcatalogue.service.FoodCatalogueService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,13 @@ public class FoodCatalogueController {
     public ResponseEntity<FoodItemDTO> addFoodItem(@RequestBody FoodItemDTO foodItemDTO) {
         FoodItemDTO savedFoodItem = foodCatalogueService.addFoodItem(foodItemDTO);
         return new ResponseEntity<>(savedFoodItem, HttpStatus.OK);
+    }
+
+    @GetMapping("/fetchRestaurantAndFoodItemsById/{restaurantId}")
+    public ResponseEntity<FoodCataloguePage> fetchRestaurantDetailsWithFoodMenu(@PathVariable Integer restaurantId){
+        FoodCataloguePage foodCataloguePage = foodCatalogueService.fetchFoodCataloguePageDetails(restaurantId);
+        return new ResponseEntity<>(foodCataloguePage, HttpStatus.OK);
+
+
     }
 }

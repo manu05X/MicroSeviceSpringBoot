@@ -2,6 +2,9 @@ package com.manish.foodcatalogue;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class FoodCatalogueMicroserviceApplication {
@@ -10,4 +13,9 @@ public class FoodCatalogueMicroserviceApplication {
         SpringApplication.run(FoodCatalogueMicroserviceApplication.class, args);
     }
 
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
