@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
-import { RetaurantListingModule } from './retaurant-listing/retaurant-listing.module';
+import { RestaurantListingModule } from './restaurant-listing/restaurant-listing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RetaurantListingModule } from './retaurant-listing/retaurant-listing.mo
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    RetaurantListingModule
+    RestaurantListingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

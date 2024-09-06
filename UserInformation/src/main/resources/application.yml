@@ -13,7 +13,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/userdb
 #    The password of DB
-    password: new_password
+    password: 2122
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:

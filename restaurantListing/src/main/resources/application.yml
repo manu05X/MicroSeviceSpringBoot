@@ -12,7 +12,7 @@ spring:
     name: RESTAURANT-SERVICE
   datasource:
     url: jdbc:mysql://localhost:3306/restaurantdb
-    password: new_password
+    password: 2122
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
