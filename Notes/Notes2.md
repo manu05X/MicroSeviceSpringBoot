@@ -10,3 +10,7 @@ Now to make other components we do : ng g c retaurant-listing --module=retaurant
 
 ng g module food-catalogue --routing
 ng g c food-catalogue --module=food-catalogue
+
+
+ng g module order-summary --routing
+ng g c order-summary --module=order-summary
