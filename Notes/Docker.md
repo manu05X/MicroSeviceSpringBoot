@@ -19,3 +19,9 @@ ENTRYPOINT exec java $JAVA_OPTS -jar app.jar
 - The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
 
 - The ENTRYPOINT instruction is used to configure the executables that will always run after the container is initiated
+
+
+> - **Command for creating image**
+>   - docker build -t manu005/restaurant-listing-service:latest .
+> - **Command for pushing image to dockerhub**
+>   - docker push manu005/restaurant-listing-service:latest
