@@ -13,7 +13,7 @@ spring:
   application:
     name: USER-SERVICE
   datasource:
-    url: jdbc:mysql://localhost:3306/userdb
+    url: jdbc:mysql://localhost:3306/userdb // mysql-db-instance.ch8kwgiu4x5q.eu-west-2.rds.amazonaws.com:3306/userdb
 #    The password of DB
     password: 2122
     username: root
