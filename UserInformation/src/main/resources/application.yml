@@ -13,10 +13,9 @@ spring:
   application:
     name: USER-SERVICE
   datasource:
-    url: jdbc:mysql://localhost:3306/userdb // mysql-db-instance.ch8kwgiu4x5q.eu-west-2.rds.amazonaws.com:3306/userdb
-#    The password of DB
-    password: 2122
-    username: root
+    url: ${SPRING_DATASOURCE_URL} # Use the value from the environment variable
+    password: ${SPRING_DATASOURCE_PASSWORD} # Use the value from the environment variable
+    username: ${SPRING_DATASOURCE_USERNAME} # Use the value from the environment variable
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
